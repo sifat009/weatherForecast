@@ -9,11 +9,7 @@ app.get('/api/weather', (req, res) => {
         userLocation = req.query.location;
     } else {
         const userIP = req.ip.substr(0, 7) === '::ffff:' ? req.ip.substr(7) : req.ip;
-        if(userIP === '127.0.0.1') {
-            userLocation = 'Amazon';
-        } else {
-            userLocation = geoip.lookup(userIP).city;
-        }
+        userLocation = geoip.lookup(userIP) ? geoip.lookup(userIP).city : geoip.lookup('119.148.8.82').city;
     }
     getWeather(userLocation, (error, data)=> {
         if(error) {
