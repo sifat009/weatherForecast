@@ -15,7 +15,7 @@ app.get('/api/weather', (req, res) => {
         if(error) {
             return res.send(error);
         } else {
-            return res.json(data);
+            return res.json({location: userLocation, ...data});
         }
     })
 })

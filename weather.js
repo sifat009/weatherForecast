@@ -17,8 +17,7 @@ const getWeather = (place, callback) => {
                 if(error) {
                     callback({error, data: undefined})
                 } else {
-                    const {temperature, summary} = currently;
-                    callback({error: undefined, data: {temperature, summary}})
+                    callback(error, currently)
                 }
             })
         }
