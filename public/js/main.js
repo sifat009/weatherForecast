@@ -1,6 +1,8 @@
 const form = document.querySelector('form');
 const input = document.querySelector('input[type="text"]');
-
+const temperatureDiv = document.querySelector('.temperature');
+const locationDiv = document.querySelector('.location');
+const error = document.querySelector('.error');
 
 
 form.addEventListener('submit', (event) => {
@@ -8,10 +10,14 @@ form.addEventListener('submit', (event) => {
     const location = input.value;
     getLocation(location)
         .then((data) => {
-            console.log(data);
+            if(data.error) {
+                error.innerText = data.error;
+            } else {
+                temperatureDiv.innerHTML = `${data.location.toUpperCase()} ${data.temperature} &#8451;`;
+            }
         })
         .catch((error) => {
-            console.log(error);
+            error.innerText = error;
         })
     input.value = '';
 })
