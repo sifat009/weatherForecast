@@ -13,7 +13,8 @@ form.addEventListener('submit', (event) => {
             if(data.error) {
                 error.innerText = data.error;
             } else {
-                temperatureDiv.innerHTML = `${data.location.toUpperCase()} ${data.temperature} &#8451;`;
+                locationDiv.innerText = `${data.location.toUpperCase()}`;
+                temperatureDiv.innerHTML = ` ${data.temperature} &#8451;`;
             }
         })
         .catch((error) => {

@@ -40,6 +40,22 @@ header ul li a {
     padding-top: 5%;
 }
 
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+span.temperature {
+    font-size: 30px;
+    color: #757775;
+    margin-left: 15px;
+}
+
+.error {
+    color: rgb(227, 92, 92);
+}
+
 
 input[type="text"] {
     height: 20px;
