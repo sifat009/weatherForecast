@@ -19,13 +19,29 @@ app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.set('view engine', hbs);
 
+// home route
+
 app.get('/', (req, res) => {
     res.render('weather.hbs', {
         title: 'Weather',
     })
 })
 
+// about route
 
+app.get('/about', (req, res) => {
+    res.render('about.hbs', {
+        title: 'About page'
+    })
+})
+
+// Error route
+
+app.get('*', (req, res) => {
+    res.render('404.hbs', {
+        title: '404'
+    })
+})
 
 // api routes
 
