@@ -19,6 +19,13 @@ app.set('views', viewsPath);
 hbs.registerPartials(partialsPath);
 app.set('view engine', hbs);
 
+
+// api routes
+
+app.use('/api/weather', weatherRouter);
+
+
+
 // home route
 
 app.get('/', (req, res) => {
@@ -42,12 +49,6 @@ app.get('*', (req, res) => {
         title: '404'
     })
 })
-
-// api routes
-
-app.use('/api/weather', weatherRouter);
-
-
 
 app.listen(3000, () => {
     console.log('app listening on port 3000');

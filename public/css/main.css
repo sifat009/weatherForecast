@@ -2,7 +2,7 @@ body {
     color: #394032;
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
+    min-height: 100vh;
 }
 
 h3 {
@@ -34,8 +34,43 @@ header ul li a {
     color: #394032;
 }
 
+.container {
+    flex-grow: 1;
+    margin: 0 auto;
+    padding-top: 5%;
+}
+
+input[type="text"] {
+    height: 20px;
+    padding: 10px;
+    font-size: 1em;
+    line-height: 3;
+}
+input,
+input::-webkit-input-placeholder {
+    line-height: 3;
+    opacity: .9;
+}
+
+form {
+    display: flex;
+}
+
+form button {
+    border-radius: 0 3px 3px 0;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #e6e8e6;
+    background: #394032;
+    border: 1px solid #394032;
+    cursor: pointer;
+}
+
+button:focus {outline:0;}
+
 footer {
     border-top: 2px solid #e6e8e6;
     padding: 20px;
     text-align: center;
+    font-size: 16px;
 }
