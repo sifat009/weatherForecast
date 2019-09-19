@@ -3,6 +3,7 @@ const app = express();
 const weatherRouter = require('./api/weather');
 const hbs = require('hbs');
 const path = require('path');
+const port = process.env.PORT || 3000;
 
 const staticPath = path.join(__dirname, 'public');
 const partialsPath = path.join(__dirname, './layouts/partials');
@@ -50,6 +51,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('app listening on port 3000');
+app.listen(port, () => {
+    console.log(`app listening on port ${port}`);
 })

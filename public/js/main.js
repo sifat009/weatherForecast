@@ -22,7 +22,7 @@ form.addEventListener('submit', (event) => {
                 detailsDiv.innerText = '';
                 error.innerText = data.error;
             } else {
-                const details = `Summary: ${data.summary} and ${data.precipProbability}% possibility to Rain`;
+                const details = `Weather is ${data.summary} and ${data.precipProbability}% possibility to Rain`;
                 locationDiv.innerText = `${data.location.toUpperCase()}`;
                 temperatureDiv.innerHTML = ` ${data.temperature} &#8451;`;
                 detailsDiv.innerText = details;
@@ -36,6 +36,6 @@ form.addEventListener('submit', (event) => {
 
 
 const getLocation = async (location) => {
-    const res = await fetch(`http://localhost:3000/api/weather?location=${location}`);
+    const res = await fetch(`/api/weather?location=${location}`);
     return await res.json();
 }
